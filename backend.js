@@ -10,6 +10,12 @@ const user = [{
 app.get("/show", (req, res) => {
     res.json( user )
 })
+app.post("/add",(req,res)=>{
+    const newUser=req.body;
+    user.push(newUser)
+    res.send("user is added")
+})
+
 app.listen(port,()=>{
     console.log("Server is running on the port," ,port)
 })
